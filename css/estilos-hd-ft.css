@@ -1,0 +1,166 @@
+header {
+    background-color: white;
+    position: relative;
+    z-index: 2;
+}
+
+header li {
+    list-style: none;
+}
+
+a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px 0;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-branding {
+    font-size: 2rem;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    transition: 0.3s ease-out;
+    z-index: 10;
+
+}
+
+.nav-link:hover {
+    color: dodgerblue;
+}
+
+.img_logo{
+    width:70px; 
+    height:auto; 
+    margin: 0;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 30px; /* Fijar el tamaÃ±o del icono de hamburguesa */
+    height: 25px;
+}
+
+.bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: black;
+}
+
+/* footer */
+
+.container-footer{
+    width: 90%; 
+    max-width: 1200px;
+     margin: 0 auto;
+}
+
+.cont-copyright{
+    width: 100%;
+     padding: 10px 0; 
+     border-top: 1px gray solid;
+}
+
+.cont-copyright > p{
+    font-size: 14px; 
+    font-weight: 200; 
+    color: black; 
+    text-align: center;
+}
+
+@media(max-width: 968px) {
+    .nav-menu {
+        display: none; /* Oculta el menÃº de escritorio en pantallas pequeÃ±as */
+    }
+
+    .nav-menu-mobile {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: #fefefe;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        z-index: 10;
+    }
+
+    .nav-menu-mobile.active {
+        max-height: 350px; /* Ajusta este valor segÃºn la altura necesaria para tu contenido */
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-item {
+        width: 100%;
+        padding: 14px 0;
+        text-align: center;
+        border-top: 1px solid #ccc; /* Borde superior */
+        border-bottom: 1px solid #ccc; /* Borde inferior */
+        z-index: 10;
+    }
+
+    .nav-item:first-child {
+        border-top: 1px solid #ccc; /* Asegura el borde superior del primer elemento */
+        z-index: 10;
+
+    }
+
+    .nav-item:last-child {
+        border-bottom: 1px solid #ccc; /* Asegura el borde inferior del Ãºltimo elemento */
+        z-index: 10;
+
+    }
+
+    .img_logo{
+        width:50px; 
+        height:auto; 
+        margin: 0;
+    }
+}
+
+@media(min-width: 969px) {
+    .nav-menu-mobile {
+        display: none; /* Oculta el menÃº mÃ³vil en pantallas grandes */
+    }
+}
